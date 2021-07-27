@@ -1,3 +1,5 @@
+// main files are in target/readAndZip folder, we will copy files that in readAndZip folder
+
 const fs = require('fs');
 const path = require('path');
 const gzip = require('zlib').createGzip();
