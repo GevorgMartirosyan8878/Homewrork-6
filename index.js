@@ -16,7 +16,7 @@ const setPath = path.normalize(`${__dirname}/target/readAndZip`);
 
 readAndZipFiles(setPath);
 
-
+// main functional
 async function readAndZipFiles(dir) {
     dir = path.normalize(dir);
     const files = await readFile(dir);
@@ -32,6 +32,7 @@ async function readAndZipFiles(dir) {
 
         input.pipe(gzip).pipe(output);
     })
+
 }
 
 
@@ -39,6 +40,7 @@ function createFolderName(direction) {
     return path.normalize(`${path.dirname(direction)}/${randomName}`);
 }
 
+// read file
 function readFile(path) {
     return new Promise((resolve, reject) => {
         fs.readdir(path, (err, data) => {
@@ -48,6 +50,7 @@ function readFile(path) {
     })
 }
 
+// generated random number for creating uniq folder name
 function getRandomNum(max) {
     return Math.floor(Math.random() * max);
 }
